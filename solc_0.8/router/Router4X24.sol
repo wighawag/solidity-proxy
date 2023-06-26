@@ -80,13 +80,13 @@ contract Router4X24 {
 			// TODO binary search
 			uint40 pair;
 			if (i < 6) {
-				pair = uint40((sigs_01 >> (i * 40)) & 0xFFFFFF);
+				pair = uint40((sigs_01 >> (i * 40)) & 0xFFFFFFFFFF);
 			} else if (i < 12) {
-				pair = uint40((sigs_02 >> ((i - 6) * 40)) & 0xFFFFFF);
+				pair = uint40((sigs_02 >> ((i - 6) * 40)) & 0xFFFFFFFFFF);
 			} else if (i < 18) {
-				pair = uint40((sigs_03 >> ((i - 12) * 40)) & 0xFFFFFF);
+				pair = uint40((sigs_03 >> ((i - 12) * 40)) & 0xFFFFFFFFFF);
 			} else {
-				pair = uint40((sigs_04 >> ((i - 18) * 40)) & 0xFFFFFF);
+				pair = uint40((sigs_04 >> ((i - 18) * 40)) & 0xFFFFFFFFFF);
 			}
 			if (pair == 0) {
 				// we hit the zero flag value
