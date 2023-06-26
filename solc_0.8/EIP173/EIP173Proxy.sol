@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "./Proxy.sol";
+import "../EIP1967/Proxy.sol";
 
 interface ERC165 {
     function supportsInterface(bytes4 id) external view returns (bool);
@@ -19,8 +19,8 @@ contract EIP173Proxy is Proxy {
     // --------------------------------------------------------------------------------------------
 
     constructor(address implementationAddress, address ownerAddress, bytes memory data) payable {
-        _setImplementation(implementationAddress, data);
         _setOwner(ownerAddress);
+        _setImplementation(implementationAddress, data);
     }
 
     // --------------------------------------------------------------------------------------------

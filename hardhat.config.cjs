@@ -26,7 +26,7 @@ module.exports = {
 		})
 	),
 	paths: {
-		sources: 'src',
+		sources: 'solc_0.8',
 	},
 	generateArtifacts: {
 		js: 'generated/artifacts.js',

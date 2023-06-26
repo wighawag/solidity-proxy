@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 devDependencies:
   '@nomicfoundation/hardhat-network-helpers':
     specifier: ^1.0.8
@@ -8,8 +12,8 @@ devDependencies:
     specifier: ^2.14.1
     version: 2.14.1(typescript@5.1.3)
   hardhat-rocketh:
-    specifier: ^0.5.6
-    version: 0.5.6(rocketh@0.5.2)
+    specifier: ^0.6.1
+    version: 0.6.1(rocketh@0.6.0)
   ldenv:
     specifier: ^0.3.5
     version: 0.3.5
@@ -1790,13 +1794,13 @@ packages:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
     dev: true
 
-  /hardhat-rocketh@0.5.6(rocketh@0.5.2):
-    resolution: {integrity: sha512-R95Kk9XyGjCLNRLJb5LD88sRN4i5Xm13jQrUcQvqWtEOVBL87R8Fv1vEw2CnGoBTCyTGURaj5tRcrp1mRp1GYw==}
+  /hardhat-rocketh@0.6.1(rocketh@0.6.0):
+    resolution: {integrity: sha512-Cu3nm4JCoTAyWO0A9g8RGr/76on/MYAWBh63SEEoCDbgrTg9saKf6NUOupsmevTiR/hpx47RIFQv2LKuX48v9w==}
     hasBin: true
     peerDependencies:
-      rocketh: 0.5.2
+      rocketh: 0.6.0
     dependencies:
-      rocketh: 0.5.2(typescript@5.1.3)
+      rocketh: 0.6.0(typescript@5.1.3)
     dev: true
 
   /hardhat@2.14.1(typescript@5.1.3):
@@ -2253,6 +2257,12 @@ packages:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
     dev: true
 
+  /named-logs-console@0.2.3:
+    resolution: {integrity: sha512-pfKeXt9KTt5GVYnQSYq8zIf80d3K1pQP8gtnUBWx6XHqljbu6RpYbGOrP2lgfWyM6aAJCqdlkJamLmuukaUT9Q==}
+    dependencies:
+      named-logs: 0.2.2
+    dev: true
+
   /named-logs@0.2.2:
     resolution: {integrity: sha512-uXvQSEp8W99elz/UFpmptvRkjbr+UwJRfONsTND/W4ncqLlio0hfIBKe2HUhz3pPHhNd1XUoHyf1cn8Pgxt4oA==}
     dev: true
@@ -2467,8 +2477,8 @@ packages:
       bn.js: 5.2.1
     dev: true
 
-  /rocketh@0.5.2(typescript@5.1.3):
-    resolution: {integrity: sha512-y8u49v+n/yGqZs5zbLxuyYWZb521tiR8s9G4/71g6SVRkhkYC7Ab4MA6g0w8KJsBxPUDEY3aToc7tp/1kifs7w==}
+  /rocketh@0.6.0(typescript@5.1.3):
+    resolution: {integrity: sha512-kkTAYd29zo6kDsdMNM4g20f0cxEMduUORpUjT0gG9WdSl6WTvl96o69uXAddofEL6RjZNUocxncptToLs//5nA==}
     hasBin: true
     dependencies:
       commander: 10.0.1
@@ -2477,6 +2487,8 @@ packages:
       esbuild-register: 3.4.2(esbuild@0.17.19)
       figlet: 1.6.0
       ldenv: 0.3.5
+      named-logs: 0.2.2
+      named-logs-console: 0.2.3
       viem: 0.3.50(typescript@5.1.3)
     transitivePeerDependencies:
       - bufferutil
