@@ -1,7 +1,7 @@
 {
   "name": "solidity-proxy",
   "version": "0.2.0",
-  "description": "Proxy contract",
+  "description": "Proxy contracts, including immutable router",
   "publishConfig": {
     "access": "public"
   },
