@@ -163,7 +163,7 @@ contract Router10X60 {
 		fallback_implementation = routes.fallbackImplementation;
 	}
 
-	fallback() external {
+	fallback() external payable {
 		uint32 sig = uint32(msg.sig);
 		uint256 implementationIndex;
 		uint256 left = 0;
