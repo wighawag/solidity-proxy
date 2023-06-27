@@ -118,11 +118,12 @@ contract Router10X60 {
 			uint256 tmp_sigs_08;
 			uint256 tmp_sigs_09;
 			
-			uint256 lastPair;
+			uint256 lastSig;
 			for (uint256 i = 0; i < numSigs; i++) {
 				uint256 pair = uint256(uint40(routes.sigMap[i]));
-				require(lastPair < pair, "NOT_IN_ORDER");
-				lastPair = pair;
+				uint32 sig = uint32(pair >> 8);
+				require(lastSig < sig, "NOT_IN_ORDER");
+				lastSig = sig;
 				if (i < 6) {
 					tmp_sigs_00 = tmp_sigs_00 | (pair << (i * 40));
 				} else if (i < 12) {
