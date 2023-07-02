@@ -1,6 +1,6 @@
 {
   "name": "solidity-proxy",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Proxy contracts, including immutable router",
   "publishConfig": {
     "access": "public"
@@ -8,7 +8,7 @@
   "type": "module",
   "files": [
     "generated",
-    "src"
+    "solc_0.8"
   ],
   "devDependencies": {
     "@nomicfoundation/hardhat-network-helpers": "^1.0.8",
