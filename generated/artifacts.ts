@@ -1,4 +1,4 @@
-export default /** @type {const} **/ ({
+export default {
   "EIP173Proxy": {
     "_format": "hh-sol-artifact-1",
     "contractName": "EIP173Proxy",
@@ -14543,4 +14543,4 @@ export default /** @type {const} **/ ({
       "version": 1
     }
   }
-});
+} as const;
