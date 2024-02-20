@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-// EIP-1967
+// ERC-1967
 abstract contract Proxy {
     // --------------------------------------------------------------------------------------------
     // Events
