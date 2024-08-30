@@ -39,7 +39,7 @@ abstract contract Proxy {
         }
     }
 
-    function _setImplementation(address newImplementation, bytes memory data) internal {
+    function _setImplementation(address newImplementation, bytes memory preData, bytes memory postData) internal {
         address previousImplementation;
         // solhint-disable-next-line security/no-inline-assembly
         assembly {
@@ -53,8 +53,22 @@ abstract contract Proxy {
 
         emit ProxyImplementationUpdated(previousImplementation, newImplementation);
 
-        if (data.length > 0) {
-            (bool success,) = newImplementation.delegatecall(data);
+
+        // if preData is available, we delegatecall the previous implementation so it can
+        if (preData.length > 0) {
+            (bool success,) = previousImplementation.delegatecall(postData);
+            if (!success) {
+                assembly {
+                    // This assembly ensure the revert contains the exact string data
+                    let returnDataSize := returndatasize()
+                    returndatacopy(0, 0, returnDataSize)
+                    revert(0, returnDataSize)
+                }
+            }
+        }
+
+        if (postData.length > 0) {
+            (bool success,) = newImplementation.delegatecall(postData);
             if (!success) {
                 assembly {
                     // This assembly ensure the revert contains the exact string data

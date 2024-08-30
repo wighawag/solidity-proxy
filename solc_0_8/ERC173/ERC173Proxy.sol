@@ -20,7 +20,7 @@ contract ERC173Proxy is Proxy {
 
     constructor(address implementationAddress, address ownerAddress, bytes memory data) payable {
         _setOwner(ownerAddress);
-        _setImplementation(implementationAddress, data);
+        _setImplementation(implementationAddress, "", data);
     }
 
     // --------------------------------------------------------------------------------------------
@@ -60,11 +60,15 @@ contract ERC173Proxy is Proxy {
     }
 
     function upgradeTo(address newImplementation) external onlyOwner {
-        _setImplementation(newImplementation, "");
+        _setImplementation(newImplementation, "", "");
     }
 
     function upgradeToAndCall(address newImplementation, bytes calldata data) external payable onlyOwner {
-        _setImplementation(newImplementation, data);
+        _setImplementation(newImplementation, "", data);
+    }
+
+    function callAndUpgradeToAndCall(address newImplementation, bytes calldata preData, bytes calldata postData) external payable onlyOwner {
+        _setImplementation(newImplementation, preData, postData);
     }
 
     // --------------------------------------------------------------------------------------------
