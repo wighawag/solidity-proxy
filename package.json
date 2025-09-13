@@ -1,24 +1,35 @@
 {
   "name": "solidity-proxy",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Proxy contracts, including immutable router",
   "publishConfig": {
     "access": "public"
   },
   "type": "module",
+  "exports": {
+		"artifacts/*": {
+			"types": "./generated/artifacts/*.d.ts",
+			"default": "./generated/artifacts/*.js"
+		},
+    "abis/*": {
+			"types": "./generated/abis/*.d.ts",
+			"default": "./generated/abis/*.js"
+		}
+	},
   "files": [
     "generated",
     "solc_0_8"
   ],
   "devDependencies": {
-    "@nomicfoundation/hardhat-network-helpers": "^1.0.10",
-    "hardhat": "^2.20.1",
-    "hardhat-rocketh": "^3.0.2",
+    "@nomicfoundation/hardhat-network-helpers": "^3.0.0",
+    "hardhat": "^3.0.6",
+    "hardhat-deploy": "^2.0.0-next.45",
     "ldenv": "^0.3.9",
-    "set-defaults": "^0.0.2"
+    "rocketh": "^0.14.6",
+    "set-defaults": "^0.0.5"
   },
   "scripts": {
     "prepare": "set-defaults .vscode && pnpm compile",
-    "compile": "hardhat compile"
+    "compile": "hardhat --build-profile production compile"
   }
 }
