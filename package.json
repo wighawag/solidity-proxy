@@ -1,21 +1,15 @@
 {
   "name": "solidity-proxy",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Proxy contracts, including immutable router",
   "publishConfig": {
     "access": "public"
   },
   "type": "module",
   "exports": {
-		"artifacts/*": {
-			"types": "./generated/artifacts/*.d.ts",
-			"default": "./generated/artifacts/*.js"
-		},
-    "abis/*": {
-			"types": "./generated/abis/*.d.ts",
-			"default": "./generated/abis/*.js"
-		}
-	},
+    "./artifacts/*": "./generated/artifacts/*",
+    "./abis/*": "./generated/abis/*"
+  },
   "files": [
     "generated",
     "solc_0_8"
